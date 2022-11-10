@@ -17,7 +17,7 @@ trade_2018 <- mutate(trade_2018, deficit = export < import)
 
 trade_2018 <- mutate(trade_2018, deficit = ifelse(deficit,"deficit","surplus"))
 trade_2018 <- group_by(trade_2018, deficit)
-summarise(trade_2018, n = n(),
-          mean_differential = mean(differential))
+#summarise(trade_2018, n = n(),
+#          mean_differential = mean(differential))
 
-trade_2018
+#trade_2018
