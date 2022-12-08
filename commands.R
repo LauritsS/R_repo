@@ -17,12 +17,10 @@ trade_2018 <- mutate(trade_2018, deficit = export < import)
 
 trade_2018 <- mutate(trade_2018, deficit = ifelse(deficit,"deficit","surplus"))
 trade_2018 <- group_by(trade_2018, deficit)
-#summarise(trade_2018, n = n(),
-#          mean_differential = mean(differential))
+summ_trade <- summarise(trade_2018, n = n(),
+          mean_differential = mean(differential))
 
-trade_2018
-
-ggplot(data = trade_2018) +
-  + aes(x= import, y=export) +
-  +     geom_point()+
-  +     labs(x="Import", y="Export", title = "Export und Import von Regionen")
+#ggplot(data = trade_2018) +
+#  + aes(x= import, y=export) +
+#  +     geom_point()+
+#  +     labs(x="Import", y="Export", title = "Export und Import von Regionen")

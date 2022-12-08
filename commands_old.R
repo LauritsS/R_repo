@@ -11,6 +11,10 @@ trade_2018 <- trade_2018_per_quarter |>
                 mutate(deficit = ifelse(deficit,"deficit","surplus")) |>
                 group_by(deficit)
 
-summarise(trade_2018, n = n(),
-          mean_differential = mean(differential))
+#summarise(trade_2018, n = n(),
+#          mean_differential = mean(differential))
 
+ggplot(data = trade_2018) +
+aes(x= deficit, y= differential) +
+geom_bar(stat = "summary", fun = "mean")+
+labs(x="Deficit", y="Differential", title = "Deficit from export and import")
